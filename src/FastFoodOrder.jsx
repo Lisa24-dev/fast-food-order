@@ -1,9 +1,9 @@
 import { use, useEffect, useRef, useState } from 'react';
 
 export default function FastFoodOrder() {
-  const foodRef = useRef(null);
-  const drinkRef = useRef(null);
-  const typingTimeoutRef = useRef(null);
+  const foodRef = useRef();
+  const drinkRef = useRef();
+  const typingTimeoutRef = useRef();
   const [readyMessage, setReadyMessage] = useState(false);
 
   function handleFoodInput() {
@@ -16,7 +16,6 @@ export default function FastFoodOrder() {
 
   function handleTyping() {
     setReadyMessage(false);
-    // typingTimeoutRef.current;
     clearTimeout(typingTimeoutRef.current);
 
     setTimeout(() => {
